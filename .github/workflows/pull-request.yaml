@@ -12,4 +12,4 @@ jobs:
       - name: Debug Variables
         run: echo "Deploying to production server on branch $GITHUB_WORKSPACE"
       - name: Run tests 
-        run: dotnet test ${{ env:GITHUB_WORKSPACE }}"/main/dupe7.test/dupe7.test.csproj"
+        run: dotnet test "${{ github.workspace }}/main/dupe7.test/dupe7.test.csproj"
