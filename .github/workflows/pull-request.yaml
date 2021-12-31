@@ -1,0 +1,13 @@
+name: pull-request
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        
+      - name: Run tests 
+        run: dotnet test
