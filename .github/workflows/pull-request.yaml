@@ -1,0 +1,15 @@
+name: pull-request
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        
+      - name: Debug Variables
+        run: echo "Deploying to production server on branch $GITHUB_WORKSPACE"
+      - name: Run tests 
+        run: dotnet test "${{ github.workspace }}\main\dupe7.test\dupe7.test.csproj"
