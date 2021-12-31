@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run tests 
-        run: dotnet test
+        run: dotnet test "$GITHUB_WORKSPACE/main/dupe7.test/dupe7.test.csproj"
